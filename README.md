@@ -1,5 +1,6 @@
-# Data_Science_Portfolio
-## Consisting the courseworks from Master's Degree
+# Data Science Portfolio
+## Consisting the courseworks from Master's Degree (for now)
+Date updated: 22-March-2022
 
 #### Predictive Modeling
 1. Advanced Business Analytics and Visualization
