@@ -6,7 +6,7 @@ Date updated: 22-March-2022
 #### Predictive Modeling
 **1. ABAV - Advanced Business Analytics and Visualization**
 - Title:  Improving Banking Customer Retention by Customer Churn Prediction
-- Description:
+- Description: The problem statement seeks to improve banking customer retention by predicting churcn. The study will use a banking dataset retrieved from Kaggle and SAS Enterprise Miner to develop predictive models and identify causes of churn. The objective is to provide suggestions for reducing churn rate and improving customer relationship management.
 - Skills: SAS Enterprise Miner, Tableau
 
 
