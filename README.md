@@ -30,7 +30,7 @@ Date updated: 22-March-2022
 [3.2 DM - Data Management](#anchor3.2) - Feature Engineering\
 [3.3 BIS - Business Intelligence Systems](#anchor3.3) - Improving Sales Performance of Women's Off-Road Bike\
 **4.0 Natural Language Processing**\
-[4.1 NLP - Natural Language Processing](#anchor4.1) - Spelling Checker Application\
+[4.1 NLP - Natural Language Processing](#anchor4.1) - Spelling Checker Application
 
 ---
 
