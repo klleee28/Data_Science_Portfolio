@@ -16,7 +16,7 @@ Date updated: 22-March-2022
 
 # Table of Contents
 1.0 Predictive Modeling\
-[1.1 ABAV - Advanced Business Analytics and Visualization](1.1)
+[1.1 ABAV - Advanced Business Analytics and Visualization](#anchor1.1)
 - Improving Banking Customer Retention by Customer Churn Prediction
 1.2 DAP - Data Analytical Programming
 - Automation of Loan Aproval Process Using SAS Programming
@@ -27,7 +27,7 @@ Date updated: 22-March-2022
 ---
 
 ## 1.0 Predictive Modeling
-**<a name="1.1"></a>1.1 ABAV - Advanced Business Analytics and Visualization**
+**<a name="anchor1.1"></a>1.1 ABAV - Advanced Business Analytics and Visualization**
 - **Title:** Improving Banking Customer Retention by Customer Churn Prediction
 - **Description:** This study aims to improve banking customer retention by predicting churcn. The study will use a banking dataset retrieved from Kaggle and SAS Enterprise Miner to develop predictive models and identify causes of churn. The objective is to provide suggestions for reducing churn rate and improving customer relationship management.
 - **Approach:** The work involves using machine learning to develop a predictive model for a dataset containing categorical and numerical variables. The dataset is split into training and testing data, explored through visualization and statistics, modified by encoding categorical variables and removing irrelevant features, and then used to develop two predictive models using logistic regression and artificial neural networks.
