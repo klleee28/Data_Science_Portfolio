@@ -8,9 +8,11 @@ CGPA: 3.84 \
 Program Duration: December 2021 to December 2022 \
 Email: KeanLim.lee28@gmail.com
 
-This repository archived the courseworks completed during my Master's Degree. The following provides a description of the coursework completed and skill set utilized. \
+This repository archived the courseworks completed during my Master's Degree. The following provides a description of the coursework completed and skill set utilized. 
+
 Date updated: 22-March-2022
 
+---
 ## 1.0 Predictive Modeling
 **1.1 ABAV - Advanced Business Analytics and Visualization**
 - **Title:** Improving Banking Customer Retention by Customer Churn Prediction
@@ -51,7 +53,7 @@ Date updated: 22-March-2022
 - **Result:** The study compared the performance of LSTM-based and GRU-based models for Forex price prediction using different combinations of multiple timeframes. The results showed that the GRU-based models outperformed the LSTM-based models and that using two timeframes as predictors produced better results than using three timeframes. However, all models struggled to accurately predict price peaks and troughs during highly volatile market conditions. Proper selection of timeframe combinations is crucial for high prediction accuracy.
 - **Skills:** Python, Deep Learning, Time Series Data, Data Preprocessing, Data Visualization, Data Analysis, Hyperparameter Tuning, Model Evaluation
 
-
+---
 ## 2.0 Big Data & Cloud Computing
 **2.1 BDAT - Big Data Analytics and Technologies**
 - **Title:** Big Data Tools Proposal in Tourism
@@ -69,38 +71,35 @@ Date updated: 22-March-2022
 - **Title:** Case Study: GoGreen Insurance Company Cloud Adoption
 - **Description:** This case study outlines the cloud adoption plan for GoGreen Insurance Company. The aim is to improve the company's flexibility, performance, and security while also reducing costs. The objectives include implementing a scalable and reliable architecture, securing the network and data, and utilizing cost-effective services. The study covers details on network architecture, security, encryption, instance details, recovery point objectives, document storage, web, application, and database tiers, additional services, proposed architecture diagram, and cost considerations.
 - **Approach:** The approach taken is to implement a cloud-based architecture using Amazon Web Services (AWS) to improve the company's flexibility, performance, and security while also reducing costs. The plan includes utilizing AWS services such as Auto Scaling, CloudWatch, and Route 53 to monitor and optimize resources and implementing security measures such as security groups and encryption to protect data.
-- **Skills:** AWS, VPN, EC2, S3
+- **Skills:** Cloud Computing, AWS, VPN, EC2, S3
 
-
+---
 ## 3.0 Business Intelligence and Data Management
 **3.1 DM - Data Management**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
+- **Title:** Data Pre-Processing & Data Exploration
+- **Description:** This study aims to perform data pre-processing and exploratory data analysis on a loan dataset to improve the accuracy of machine learning models in loan prediction tasks.
+- **Approach:** The approach utilized in this study include identifying and imputing missing values, removing outliers, and identifying relationships between variables. The hypotheses include relationships between income, gender, education level, repayment history, housing location, and marital status with loan approval.
+- **Result:** The hypotheses formulated in the study were validated or invalidated based on graphical and numerical examination of the dataset. Results indicate that higher income results in a higher loan amount, applicants with higher education have a higher income, good repayment history increases loan approval rate, married applicants have a higher loan approval rate. However, the hypothesis that male applicants have a higher income and that housing price in urban areas is higher than semi-urban and rural areas were invalidated.
+- **Skills:** SQL, SAS Studio, Data Preprocessing, Data Visualization, Data Analysis
 
+**3.2 DM - Data Management**
+- **Title:** Feature Engineering
+- **Description:** The aim of this study is to prepare a loan dataset for machine learning predictive models by performing feature encoding and feature scaling. The problem addressed is the need for efficient and cost-effective loan approval processes in the banking sector. The objectives are to identify appropriate feature encoding and scaling methods and apply them to the dataset.
+- **Approach:** This study outlines the process of importing and exporting a loan dataset in SAS Studio, and performing feature engineering techniques including feature encoding and feature scaling. The study uses one-hot encoding and min-max scaler methods, which are commonly used in loan dataset feature engineering.
+- **Skills:** SQL, SAS Studio, Date Preprocessing, Data Visualization
 
-**2. DM - Data Management**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
+**3.3 BIS - Business Intelligence Systems**
+- **Title:** Improving Sales Performance of Women's Off-Road Bike
+- **Description:** Global Bike Incorporated is a high-performance bicycle company that sells their products exclusively through a network of selected dealers. The sales department of GBI is chosen as a pilot run to investigate the reasons for low sales performance in the women's off-road bike (WORB), and propose sales strategies to improve its performance. The aim of the study is to propose strategies to improve the sales performance of the WORB, and the objectives are to identify the reasons for low sales performance and propose strategies to improve it.
+- **Approach:** The analysis performed focused on identifying the reasons for the low sales performance of the WORB bicycle model in the US market. OLAP analytics were used to explore the data and external sources were mined to analyze information. The investigation found that seasonality, pricing, and location were not the issue causing low sales. External sources identified that the lack of support for female ridership in the sport of off-road biking may be a contributing factor.
+- **Result:** Four recommendations were formulated to increase sales performance, which include organizing women's only events, employing female staff, active media posting about women's off-road biking, and designing women's specific biking gear.
+- **Skills:** SAP Lumira, Business intelligence, Data Analysis, Data Visualization, OLAP, ETL
 
-
-**3. BIS - Business Intelligence Systems**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
-
-
-#### Natural Language Processing
-**1. NLP**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
+---
+## 4.0 Natural Language Processing
+**4.1 NLP - Natural Language Processing**
+- **Title:** Spelling Checker Application
+- **Description:** The design of a spelling error checker that can detect both non-word and real-word errors in English language text, with a focus on the domain of sciences. The aim is to facilitate the efficiency of English language users by providing suggestions for correction. The problem statement is the prevalence of spelling errors in written text, and the objective is to design a user-friendly interface that can detect and suggest corrections for both types of errors.
+- **Approach:** The application consist of a backend and frontend. The backend includes a non-word model for detecting non-word errors and a real-word model for detecting and correcting syntax and semantics errors. The frontend includes a graphical user interface that integrates both models to enable users to check and correct spelling errors. Python packagse and libraries, as well as a training corpus, were utilized in the development of the system.
+- **Result:** The evaluation results show an average accuracy of 79.81% and 83.37% for non-word and real-word error detection, respectively.
+- **Skills:** Python, NLP, Machine Learning, Transformer
