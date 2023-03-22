@@ -1,6 +1,6 @@
 # Data Science Portfolio
 ## Courseworks from Master's Degree
-The following provides a description of the coursework completed and related technologies utilized. 
+The following provides a description of the coursework completed and related technologies utilized. \
 Date updated: 22-March-2022
 
 #### Predictive Modeling
