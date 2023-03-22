@@ -1,5 +1,5 @@
 # Data Science Portfolio
-## Consisting the courseworks from Master's Degree (for now)
+## Courseworks from Master's Degree
 The following provides a description of the coursework completed and related technologies utilized. 
 Date updated: 22-March-2022
 
