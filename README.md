@@ -13,19 +13,89 @@ Date updated: 22-March-2022
 
 
 **2. DAP - Data Analytical Programming**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
 **3. ML - Machine Learning**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **4. DL - Deep Learning**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **5. CP - Capstone**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
 
 #### Big Data & Cloud Computing
 **1. BDAT - Big Data Analytics and Technologies**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **2. BDAT - Big Data Analytics and Technologies**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **3. CIS - Cloud Infrastructures and Computing**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
 
 #### Business Intelligence and Data Management
 **1. DM - Data Management**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **2. DM - Data Management**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
+
 **3. BIS - Business Intelligence Systems**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
+
 
 #### Natural Language Processing
 **1. NLP**
+- **Title:**  
+- **Description:** 
+- **Approach:**
+- **Result:** 
+- **Skills:**
