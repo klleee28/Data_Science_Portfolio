@@ -4,13 +4,13 @@ The following provides a description of the coursework completed and related tec
 Date updated: 22-March-2022
 
 #### Predictive Modeling
-1. ABAV - Advanced Business Analytics and Visualization
+**1. ABAV - Advanced Business Analytics and Visualization**
 - Title:  Improving Banking Customer Retention by Customer Churn Prediction
 - Description:
 - Skills: SAS Enterprise Miner, Tableau
 
 
-3. DAP - Data Analytical Programming
+**3. DAP - Data Analytical Programming**
 4. ML - Machine Learning
 5. DL - Deep Learning
 6. CP - Capstone
