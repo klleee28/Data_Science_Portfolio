@@ -1,12 +1,13 @@
 # Data Science Portfolio
 ## Courseworks from my Master's Degree
 Name: Lee Kean Lim \
-Program Duration: December 2021 to December 2022 \
 Program Title: MSc in Data Science and Business Analytics \
 University: Asia Pacific University of Technology and Innovation \
 Award: Distinction \
 CGPA: 3.84 \
-The following provides a description of the coursework completed and skill set utilized. \
+Program Duration: December 2021 to December 2022 
+
+This repository archived the courseworks completed during my Master's Degree. The following provides a description of the coursework completed and skill set utilized. \
 Date updated: 22-March-2022
 
 ## 1.0 Predictive Modeling
