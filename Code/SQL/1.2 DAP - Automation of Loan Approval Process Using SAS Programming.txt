@@ -1,0 +1,1754 @@
+/********************************************
+Name of DS: Mr.LEE KEAN LIM (TP065778)
+Name of program: mydapassignment_tp065778.sas
+Description: Performing data analytics on a dataset comprising of SME customer details. 
+Dataset was provided by LFI with the objective to understand customer behavior and automate
+the loan approval process. This program aimed to develop a highly accurate prediction model
+to predict the loan approval status.
+Date first written: Thu,23-Jun-2022
+Date last updated: Tue,2-Aug-2022
+
+Project Folder name: DAP_FT_MAY_2022_TP065778
+Permanent Library name: LIB65778
+***********************************************/
+
+/****************** Data Dictionary - LIB65778.TRAINING_DS ******************/
+TITLE1 'Structure/Data Dictionary of the dataset - LIB65778.TRAINING_DS';
+PROC CONTENTS DATA = LIB65778.TRAINING_DS;
+RUN;
+
+/****************** Univariate Analysis - Categorical - MARITAL_STATUS ******************/
+TITLE 'Univariate Analysis of the categorical variable: MARITAL_STATUS';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE MARITAL_STATUS;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR MARITAL_STATUS;
+TITLE 'Univariate Analysis of the categorical variable: MARITAL_STATUS';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - QUALIFICATION ******************/
+TITLE 'Univariate Analysis of the categorical variable: QUALIFICATION';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE QUALIFICATION;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR QUALIFICATION;
+TITLE 'Univariate Analysis of the categorical variable: QUALIFICATION';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - FAMILY_MEMBERS ******************/
+TITLE 'Univariate Analysis of the categorical variable: FAMILY_MEMBERS';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE FAMILY_MEMBERS;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR FAMILY_MEMBERS;
+TITLE 'Univariate Analysis of the categorical variable: FAMILY_MEMBERS';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - GENDER ******************/
+TITLE 'Univariate Analysis of the categorical variable: GENDER';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE GENDER;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR GENDER;
+TITLE 'Univariate Analysis of the categorical variable: GENDER';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - EMPLOYMENT ******************/
+TITLE 'Univariate Analysis of the categorical variable: EMPLOYMENT';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE EMPLOYMENT;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR EMPLOYMENT;
+TITLE 'Univariate Analysis of the categorical variable: EMPLOYMENT';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - LOAN_HISTORY ******************/
+TITLE 'Univariate Analysis of the categorical variable: LOAN_HISTORY';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE LOAN_HISTORY;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR LOAN_HISTORY;
+TITLE 'Univariate Analysis of the categorical variable: LOAN_HISTORY';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - LOAN_LOCATION ******************/
+TITLE 'Univariate Analysis of the categorical variable: LOAN_LOCATION';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE LOAN_LOCATION;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR LOAN_LOCATION;
+TITLE 'Univariate Analysis of the categorical variable: LOAN_LOCATION';
+
+RUN;
+
+/****************** Univariate Analysis - Categorical - LOAN_APPROVAL_STATUS ******************/
+TITLE 'Univariate Analysis of the categorical variable: LOAN_APPROVAL_STATUS';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE LOAN_APPROVAL_STATUS;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBAR LOAN_APPROVAL_STATUS;
+TITLE 'Univariate Analysis of the categorical variable: LOAN_APPROVAL_STATUS';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - CANDIDATE_INCOME ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: CANDIDATE_INCOME';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR CANDIDATE_INCOME;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+HISTOGRAM CANDIDATE_INCOME;
+
+TITLE 'Univariate Analysis of the Continuous variable: CANDIDATE_INCOME';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - LOAN_DURATION ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR LOAN_DURATION;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+HISTOGRAM LOAN_DURATION;
+
+TITLE 'Univariate Analysis of the Continuous variable: LOAN_DURATION';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - GUARANTEE_INCOME ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: GUARANTEE_INCOME';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR GUARANTEE_INCOME;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+HISTOGRAM GUARANTEE_INCOME;
+
+TITLE 'Univariate Analysis of the Continuous variable: GUARANTEE_INCOME';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - LOAN_AMOUNT ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR LOAN_AMOUNT;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+HISTOGRAM LOAN_AMOUNT;
+
+TITLE 'Univariate Analysis of the Continuous variable: LOAN_AMOUNT';
+
+RUN;
+
+/****************** Bivariate Analysis - Categorical vs Categorical - MARITAL_STATUS vs LOAN_APPROVAL_STATUS ******************/
+TITLE1 'Bivariate Analysis of variables: ';
+TITLE2 '(MARITAL_STATUS - Categorical variables vs LOAN_APPROVAL_STATUS - Categorical variable)';
+FOOTNOTE '-----END-----';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE MARITAL_STATUS * LOAN_APPROVAL_STATUS /
+PLOTS = FREQPLOT( TWOWAY = STACKED SCALE = GROUPPCT );
+
+RUN;
+
+/****************** Bivariate Analysis - Categorical vs Categorical - LOAN_LOCATION vs LOAN_APPROVAL_STATUS ******************/
+TITLE1 'Bivariate Analysis of variables: ';
+TITLE2 '(LOAN_LOCATION - Categorical variables vs LOAN_APPROVAL_STATUS - Categorical variable)';
+FOOTNOTE '-----END-----';
+
+PROC FREQ DATA = LIB65778.TRAINING_DS;
+
+TABLE LOAN_LOCATION * LOAN_APPROVAL_STATUS /
+PLOTS = FREQPLOT( TWOWAY = STACKED SCALE = GROUPPCT );
+
+RUN;
+
+/****************** Bivariate Analysis - Categorical vs Continuous - LOAN_LOCATION vs CANDIDATE_INCOME ******************/
+TITLE1 'Bivariate Analysis of variables:';
+TITLE2 'LOAN_LOCATION - Categorical variables vs CANDIDATE_INCOME - Continuous variable';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS;
+
+CLASS LOAN_LOCATION;	/* Categorical variable */
+VAR CANDIDATE_INCOME;	/* Numeric variable */
+
+RUN;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBOX CANDIDATE_INCOME / CATEGORY=LOAN_LOCATION;
+/* LOAN_LOCATION -> X-Axis ; CANDIDATE_INCOME -> Y-Axis */
+TITLE 'Bivariate Analysis of the variables: LOAN_LOCATION(Categorical variable) vs CANDIDATE_INCOME(Continuous variable)';
+
+RUN;
+
+/****************** Bivariate Analysis - Categorical vs Continuous - LOAN_APPROVAL_STATUS vs CANDIDATE_INCOME ******************/
+TITLE1 'Bivariate Analysis of variables:';
+TITLE2 'LOAN_APPROVAL_STATUS - Categorical variables vs CANDIDATE_INCOME - Continuous variable';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TRAINING_DS;
+
+CLASS LOAN_APPROVAL_STATUS;	/* Categorical variable */
+VAR CANDIDATE_INCOME;	/* Numeric variable */
+
+RUN;
+
+PROC SGPLOT DATA = LIB65778.TRAINING_DS;
+
+VBOX CANDIDATE_INCOME / CATEGORY=LOAN_APPROVAL_STATUS;
+/* LOAN_LOCATION -> X-Axis ; CANDIDATE_INCOME -> Y-Axis */
+TITLE 'Bivariate Analysis of the variables: LOAN_APPROVAL_STATUS(Categorical variable) vs CANDIDATE_INCOME(Continuous variable)';
+
+RUN;
+
+/*********** Imputing missing values - Categorical variable: MARITAL_STATUS ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - MARITAL_STATUS */
+
+TITLE1 'Find the number of observations with missing values in the variable - MARITAL_STATUS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.MARITAL_STATUS IS MISSING ) OR 
+		( t.MARITAL_STATUS EQ '' ) OR 
+		( t.MARITAL_STATUS IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - MARITAL_STATUS */
+
+TITLE1 'Find details of observations with missing values in the variable - MARITAL_STATUS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.MARITAL_STATUS IS MISSING ) OR
+		( t.MARITAL_STATUS EQ '' ) OR 
+		( t.MARITAL_STATUS IS NULL ) );
+		
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold MARITAL_STATUS and number of applicants */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_FI_MARITAL_STATUS AS
+SELECT t.MARITAL_STATUS AS MARITAL_STATUS, COUNT(*) AS COUNTS
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.MARITAL_STATUS NE '' ) OR
+		( t.MARITAL_STATUS IS NOT NULL ) )
+GROUP BY t.MARITAL_STATUS;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - MARITAL_STATUS */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET marital_status = ( SELECT to.MARITAL_STATUS Label = 'M_STATUS'
+					   FROM LIB65778.TRAINING_DS_FI_MARITAL_STATUS to
+					   WHERE to.COUNTS EQ ( SELECT MAX(ti.COUNTS) Label = 'Highest Count'
+					   						FROM LIB65778.TRAINING_DS_FI_MARITAL_STATUS ti ) )
+					   /* Above is a sub-program to identify the Mode of marital_status */
+WHERE ( ( marital_status IS MISSING ) OR
+		( marital_status EQ '') OR
+		( marital_status IS NULL ) );
+
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - MARITAL_STATUS */
+
+TITLE1 'Find the number of observations with missing values in the variable - MARITAL_STATUS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.MARITAL_STATUS IS MISSING ) OR 
+		( t.MARITAL_STATUS EQ '' ) OR 
+		( t.MARITAL_STATUS IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - MARITAL_STATUS */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.MARITAL_STATUS IS MISSING ) OR
+		( t.MARITAL_STATUS EQ '' ) OR 
+		( t.MARITAL_STATUS IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: FAMILY_MEMBERS ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find the number of observations with missing values in the variable - FAMILY_MEMBERS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR 
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Remove the '+' found in the variable: FAMILY_MEMBERS */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET FAMILY_MEMBERS = SUBSTR(FAMILY_MEMBERS,1,1)
+WHERE SUBSTR(FAMILY_MEMBERS,2,1) EQ '+';
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold FAMILY_MEMBERS and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_FI_FAMILY_MEMBERS AS
+SELECT t.FAMILY_MEMBERS AS FAMILY_MEMBERS, 
+			   COUNT(*) AS COUNTS
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.FAMILY_MEMBERS NE '' ) OR
+		( t.FAMILY_MEMBERS IS NOT NULL ) )
+GROUP BY t.FAMILY_MEMBERS;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable: FAMILY_MEMBERS */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET FAMILY_MEMBERS = ( SELECT (to.FAMILY_MEMBERS) Label = 'Family Member Category'
+					   FROM LIB65778.TRAINING_DS_FI_FAMILY_MEMBERS to
+					   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 						FROM LIB65778.TRAINING_DS_FI_FAMILY_MEMBERS ti ) )
+  					 						/* Above is a sub-program to identify the counts of the MOD */
+  					 						/* and to identify the category of the MOD */
+WHERE ( ( FAMILY_MEMBERS IS MISSING ) OR
+		( FAMILY_MEMBERS EQ '' ) OR 
+		( FAMILY_MEMBERS IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find the number of observations with missing values in the variable - FAMILY_MEMBERS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR 
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: GENDER ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the number of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the details of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold GENDER category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_FI_GENDER_DS AS
+SELECT t.gender AS Gender,
+	   COUNT(*) AS COUNTS
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.GENDER NE '' ) OR 
+		( t.GENDER IS NOT NULL ) )
+GROUP BY t.gender;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - GENDER */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET GENDER = ( SELECT to.GENDER Label = 'Gender'
+			   FROM LIB65778.TRAINING_FI_GENDER_DS to
+			   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 				FROM LIB65778.TRAINING_FI_GENDER_DS ti ) )
+					 				/* Above is a sub-program to identify the Mode of GENDER */
+  					 			    /* and to identify the category of the MOD */
+WHERE ( ( GENDER IS MISSING ) OR 
+		( GENDER EQ '' ) OR 
+		( GENDER IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the number of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: EMPLOYMENT ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the number of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the details of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold EMPLOYMENT category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_FI_EMPLOYMENT_DS AS
+SELECT t.EMPLOYMENT AS Employment,
+	       COUNT(*) AS COUNTS
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.EMPLOYMENT NE '' ) OR 
+		( t.EMPLOYMENT IS NOT NULL ) )
+GROUP BY t.EMPLOYMENT;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - EMPLOYMENT */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET EMPLOYMENT = ( SELECT to.EMPLOYMENT Label = 'Employment'
+			   	   FROM LIB65778.TRAINING_FI_EMPLOYMENT_DS to
+			  	   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 					FROM LIB65778.TRAINING_FI_EMPLOYMENT_DS ti ) )
+					 					/* Above is a sub-program to identify the Mode of EMPLOYMENT */
+  					 			    	/* and to identify the category of the MOD */
+WHERE ( ( EMPLOYMENT IS MISSING ) OR 
+		( EMPLOYMENT EQ '' ) OR 
+		( EMPLOYMENT IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the number of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: LOAN_HISTORY ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold LOAN_HISTORY category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_FI_LOAN_HISTORY_DS AS
+SELECT t.LOAN_HISTORY AS LoanHistory,
+	         COUNT(*) AS COUNTS
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_HISTORY NE . ) OR 
+		( t.LOAN_HISTORY IS NOT NULL ) )
+GROUP BY t.LOAN_HISTORY;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - LOAN_HISTORY */
+
+PROC SQL;
+
+UPDATE LIB65778.TRAINING_DS
+SET LOAN_HISTORY = ( SELECT to.LoanHistory Label = 'Loan History'
+			   		 FROM LIB65778.TRAINING_FI_LOAN_HISTORY_DS to
+			  		 WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 					  FROM LIB65778.TRAINING_FI_LOAN_HISTORY_DS ti ) )
+					 				 	  /* Above is a sub-program to identify the Mode of LOAN_HISTORY */
+  					 			    	  /* and to identify the category of the MOD */
+WHERE ( ( LOAN_HISTORY IS MISSING ) OR 
+		( LOAN_HISTORY EQ . ) OR 
+		( LOAN_HISTORY IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_HISTORY IS MISSING ) OR 
+		( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_HISTORY IS MISSING ) OR
+		( t.LOAN_HISTORY EQ .) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Numerical variable: LOAN_AMOUNT ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+		
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR 
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+
+QUIT;
+
+/* STEP 4: Imputing missing values found in the variable - LOAN_AMOUNT */
+
+PROC STDIZE DATA=LIB65778.TRAINING_DS REPONLY
+
+METHOD=MEAN OUT=LIB65778.TRAINING_DS;
+VAR LOAN_AMOUNT;
+
+QUIT;
+
+/* STEP 5: (After imputation) Find the number of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the details of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR 
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+
+QUIT;
+
+/*********** Imputing missing values - Numerical variable: LOAN_DURATION ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TRAINING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TRAINING_DS_BK AS
+SELECT *
+FROM LIB65778.TRAINING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT * 
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR 
+		( t.LOAN_DURATION IS NULL ) OR 
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/* STEP 4: Imputing missing values found in the variable - LOAN_DURATION */
+
+PROC STDIZE DATA=LIB65778.TRAINING_DS REPONLY
+
+METHOD=MEAN OUT=LIB65778.TRAINING_DS;
+VAR LOAN_DURATION;
+
+QUIT;
+
+/* STEP 5: (After imputation) Find the number of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the details of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TRAINING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR 
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/* Macro for Univariate analysis of categorical variables found in LIB65778.TESTING_DS */
+/* Macro begins here */
+
+%MACRO MACRO_UVA_CAT_VAR(PDS_NAME, PVAR_NAME, PTITLE_NAME);
+
+PROC FREQ DATA = &PDS_NAME;
+TABLE &PVAR_NAME;
+TITLE &PTITLE_NAME;
+QUIT;
+
+%MEND MACRO_UVA_CAT_VAR;
+
+/* Macro ends here */
+
+/* Calling the Macro for Univariate analysis of categorical variables */
+
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, MARITAL_STATUS, "Univariate Analysis of the Categorical variable: MARITAL_STATUS");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, QUALIFICATION, "Univariate Analysis of the Categorical variable: QUALIFICATION");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, FAMILY_MEMBERS, "Univariate Analysis of the Categorical variable: FAMILY_MEMBERS");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, GENDER, "Univariate Analysis of the Categorical variable: GENDER");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, EMPLOYMENT, "Univariate Analysis of the Categorical variable: EMPLOYMENT");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, LOAN_HISTORY, "Univariate Analysis of the Categorical variable: LOAN_HISTORY");
+%MACRO_UVA_CAT_VAR(LIB65778.TESTING_DS, LOAN_LOCATION, "Univariate Analysis of the Categorical variable: LOAN_LOCATION");
+
+/****************** Univariate Analysis - Continuous - CANDIDATE_INCOME ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: CANDIDATE_INCOME';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TESTING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR CANDIDATE_INCOME;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TESTING_DS;
+
+HISTOGRAM CANDIDATE_INCOME;
+
+TITLE 'Univariate Analysis of the Continuous variable: CANDIATE_INCOME';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - LOAN_DURATION ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TESTING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR LOAN_DURATION;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TESTING_DS;
+
+HISTOGRAM LOAN_DURATION;
+
+TITLE 'Univariate Analysis of the Continuous variable: LOAN_DURATION';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - GUARANTEE_INCOME ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: GUARANTEE_INCOME';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TESTING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR GUARANTEE_INCOME;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TESTING_DS;
+
+HISTOGRAM GUARANTEE_INCOME;
+
+TITLE 'Univariate Analysis of the Continuous variable: GUARANTEE_INCOME';
+
+RUN;
+
+/****************** Univariate Analysis - Continuous - LOAN_AMOUNT ******************/
+TITLE1 'Univariate Analysis of the Continuous variable: LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC MEANS DATA = LIB65778.TESTING_DS N NMISS MIN MAX MEAN MEDIAN STD;
+
+VAR LOAN_AMOUNT;
+
+RUN;
+
+ODS GRAPHICS / RESET WIDTH=4.0 IN HEIGHT=3.0 IN IMAGEMAP;
+
+PROC SGPLOT DATA = LIB65778.TESTING_DS;
+
+HISTOGRAM LOAN_AMOUNT;
+
+TITLE 'Univariate Analysis of the Continuous variable: LOAN_AMOUNT';
+
+RUN;
+
+/* Macro for Bivariate analysis of categorical variables found in LIB65778.TESTING_DS */
+/* Macro begins here */
+
+%MACRO MACRO_BVA_CAT_VAR(PDS_NAME, PVAR_1, PVAR_2, PTITLE_NAME);
+
+PROC FREQ DATA = &PDS_NAME;
+
+TABLE &PVAR_1 * &PVAR_2 /
+PLOTS=FREQPLOT(TWOWAY=STACKED SCALE=GROUPPCT);
+TITLE1 &PTITLE_NAME;
+
+RUN;
+
+%MEND MACRO_BVA_CAT_VAR;
+
+/* Macro ends here */
+
+/* Calling the Macro for Bivariate analysis of categorical variables */
+
+%MACRO_BVA_CAT_VAR(LIB65778.TESTING_DS, MARITAL_STATUS, LOAN_LOCATION, "Bivariate Analysis of variables: MARITAL_STATUS vs LOAN_LOCATION");
+%MACRO_BVA_CAT_VAR(LIB65778.TESTING_DS, GENDER, FAMILY_MEMBERS, "Bivariate Analysis of variables: GENDER vs FAMILY_MEMBERS");
+
+/* Macro for Bivariate analysis of variable (categorical vs numerical) found in LIB65778.TESTING_DS */
+
+%MACRO MACRO_BVA_CAT_NUM(PDS_NAME, CAT_VAR, NUM_VAR, PTITLE1, PTITLE2); /* Macro begins here */
+TITLE1 &PTITLE1;
+PROC MEANS DATA = &PDS_NAME;
+CLASS &CAT_VAR;
+VAR &NUM_VAR;
+RUN;
+PROC SGPLOT DATA = &PDS_NAME;
+VBOX &NUM_VAR / CATEGORY=&CAT_VAR;
+/* LOAN_LOCATION --> X-Axis ; CANDIDATE_INCOME --> Y-Axis */
+TITLE &PTITLE2;
+RUN;
+
+%MEND MACRO_BVA_CAT_NUM; /* Macro ends here */
+
+/* Calling the Macro for Bivariate analysis of (categorical vs numerical) variables */
+
+%MACRO_BVA_CAT_NUM(LIB65778.TESTING_DS, GENDER, CANDIDATE_INCOME, "Bivariate Analysis of the variable", "GENDER vs CANDIDATE_INCOME");
+%MACRO_BVA_CAT_NUM(LIB65778.TESTING_DS, GENDER, LOAN_AMOUNT, "Bivariate Analysis of the variable", "GENDER vs LOAN_AMOUNT");
+
+/*********** Imputing missing values - Categorical variable: GENDER ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the number of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the details of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold GENDER category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_FI_GENDER_DS AS
+SELECT t.gender AS Gender,
+	   COUNT(*) AS COUNTS
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.GENDER NE '' ) OR 
+		( t.GENDER IS NOT NULL ) )
+GROUP BY t.gender;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - GENDER */
+
+PROC SQL;
+
+UPDATE LIB65778.TESTING_DS
+SET GENDER = ( SELECT to.GENDER Label = 'Gender'
+			   FROM LIB65778.TESTING_FI_GENDER_DS to
+			   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 				FROM LIB65778.TESTING_FI_GENDER_DS ti ) )
+					 				/* Above is a sub-program to identify the Mode of GENDER */
+  					 			    /* and to identify the category of the MOD */
+WHERE ( ( GENDER IS MISSING ) OR 
+		( GENDER EQ '' ) OR 
+		( GENDER IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find the number of observations with missing values in the variable - GENDER';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR 
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - GENDER */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.GENDER IS MISSING ) OR
+		( t.GENDER EQ '' ) OR 
+		( t.GENDER IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: FAMILY_MEMBERS ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find the number of observations with missing values in the variable - FAMILY_MEMBERS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR 
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Remove the '+' found in the variable: FAMILY_MEMBERS */
+
+PROC SQL;
+
+UPDATE LIB65778.TESTING_DS
+SET FAMILY_MEMBERS = SUBSTR(FAMILY_MEMBERS,1,1)
+WHERE SUBSTR(FAMILY_MEMBERS,2,1) EQ '+';
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold FAMILY_MEMBERS and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_FI_FAMILY_MEMBERS AS
+SELECT t.FAMILY_MEMBERS AS FAMILY_MEMBERS, 
+			   COUNT(*) AS COUNTS
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.FAMILY_MEMBERS NE '' ) OR
+		( t.FAMILY_MEMBERS IS NOT NULL ) )
+GROUP BY t.FAMILY_MEMBERS;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable: FAMILY_MEMBERS */
+
+PROC SQL;
+
+UPDATE LIB65778.TESTING_DS
+SET FAMILY_MEMBERS = ( SELECT (to.FAMILY_MEMBERS) Label = 'Family Member Category'
+					   FROM LIB65778.TESTING_DS_FI_FAMILY_MEMBERS to
+					   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 						FROM LIB65778.TESTING_DS_FI_FAMILY_MEMBERS ti ) )
+  					 						/* Above is a sub-program to identify the counts of the MOD */
+  					 						/* and to identify the category of the MOD */
+WHERE ( ( FAMILY_MEMBERS IS MISSING ) OR
+		( FAMILY_MEMBERS EQ '' ) OR 
+		( FAMILY_MEMBERS IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find the number of observations with missing values in the variable - FAMILY_MEMBERS';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR 
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - FAMILY_MEMBERS */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.FAMILY_MEMBERS IS MISSING ) OR
+		( t.FAMILY_MEMBERS EQ '' ) OR 
+		( t.FAMILY_MEMBERS IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: EMPLOYMENT ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the number of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the details of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold EMPLOYMENT category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_FI_EMPLOYMENT_DS AS
+SELECT t.EMPLOYMENT AS Employment,
+	       COUNT(*) AS COUNTS
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.EMPLOYMENT NE '' ) OR 
+		( t.EMPLOYMENT IS NOT NULL ) )
+GROUP BY t.EMPLOYMENT;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - EMPLOYMENT */
+
+PROC SQL;
+
+UPDATE LIB65778.TESTING_DS
+SET EMPLOYMENT = ( SELECT to.EMPLOYMENT Label = 'Employment'
+			   	   FROM LIB65778.TESTING_FI_EMPLOYMENT_DS to
+			  	   WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 					FROM LIB65778.TESTING_FI_EMPLOYMENT_DS ti ) )
+					 					/* Above is a sub-program to identify the Mode of EMPLOYMENT */
+  					 			    	/* and to identify the category of the MOD */
+WHERE ( ( EMPLOYMENT IS MISSING ) OR 
+		( EMPLOYMENT EQ '' ) OR 
+		( EMPLOYMENT IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find the number of observations with missing values in the variable - EMPLOYMENT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR 
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - EMPLOYMENT */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.EMPLOYMENT IS MISSING ) OR
+		( t.EMPLOYMENT EQ '' ) OR 
+		( t.EMPLOYMENT IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Categorical variable: LOAN_HISTORY ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 4: Create a temporary dataset to hold LOAN_HISTORY category and counts */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_FI_LOAN_HISTORY_DS AS
+SELECT t.LOAN_HISTORY AS LoanHistory,
+	         COUNT(*) AS COUNTS
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_HISTORY NE . ) OR 
+		( t.LOAN_HISTORY IS NOT NULL ) )
+GROUP BY t.LOAN_HISTORY;
+
+QUIT;
+
+/* STEP 5: Find the MOD and impute the missing values found in the variable - LOAN_HISTORY */
+
+PROC SQL;
+
+UPDATE LIB65778.TESTING_DS
+SET LOAN_HISTORY = ( SELECT to.LoanHistory Label = 'Loan History'
+			   		 FROM LIB65778.TESTING_FI_LOAN_HISTORY_DS to
+			  		 WHERE to.counts EQ ( SELECT MAX(ti.counts) Label = 'Highest Counts'
+  					 					  FROM LIB65778.TESTING_FI_LOAN_HISTORY_DS ti ) )
+					 				 	  /* Above is a sub-program to identify the Mode of LOAN_HISTORY */
+  					 			    	  /* and to identify the category of the MOD */
+WHERE ( ( LOAN_HISTORY IS MISSING ) OR 
+		( LOAN_HISTORY EQ . ) OR 
+		( LOAN_HISTORY IS NULL ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the number of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_HISTORY';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_HISTORY IS MISSING ) OR 
+		( t.LOAN_HISTORY EQ . ) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+
+QUIT;
+
+/* STEP 7: (After imputation) Find the details of observations with missing values in the variable - LOAN_HISTORY */
+
+TITLE1 'Find details';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_HISTORY IS MISSING ) OR
+		( t.LOAN_HISTORY EQ .) OR 
+		( t.LOAN_HISTORY IS NULL ) );
+		
+QUIT;
+
+/*********** Imputing missing values - Numerical variable: LOAN_AMOUNT ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+		
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR 
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+
+QUIT;
+
+/* STEP 4: Imputing missing values found in the variable - LOAN_AMOUNT */
+
+PROC STDIZE DATA=LIB65778.TESTING_DS REPONLY
+
+METHOD=MEAN OUT=LIB65778.TESTING_DS;
+VAR LOAN_AMOUNT;
+
+QUIT;
+
+/* STEP 5: (After imputation) Find the number of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the details of observations with missing values in the variable - LOAN_AMOUNT */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_AMOUNT';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_AMOUNT EQ . ) OR 
+		( t.LOAN_AMOUNT IS NULL ) OR
+		( t.LOAN_AMOUNT IS MISSING ) );
+
+QUIT;
+
+/*********** Imputing missing values - Numerical variable: LOAN_DURATION ***********/
+/* STEP 1: Make a copy of the dataset - LIB65778.TESTING_DS */
+
+PROC SQL;
+
+CREATE TABLE LIB65778.TESTING_DS_BK AS
+SELECT *
+FROM LIB65778.TESTING_DS;
+
+QUIT;
+
+/* STEP 2: Find the number of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/* STEP 3: Find the details of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT * 
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR 
+		( t.LOAN_DURATION IS NULL ) OR 
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/* STEP 4: Imputing missing values found in the variable - LOAN_DURATION */
+
+PROC STDIZE DATA=LIB65778.TESTING_DS REPONLY
+
+METHOD=MEAN OUT=LIB65778.TESTING_DS;
+VAR LOAN_DURATION;
+
+QUIT;
+
+/* STEP 5: (After imputation) Find the number of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the number of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT COUNT(*) Label = 'Number of Observations'
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+		
+QUIT;
+
+/* STEP 6: (After imputation) Find the details of observations with missing values in the variable - LOAN_DURATION */
+
+TITLE1 'Find the details of observations with missing values in the variable - LOAN_DURATION';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS t
+WHERE ( ( t.LOAN_DURATION EQ . ) OR 
+		( t.LOAN_DURATION IS NULL ) OR
+		( t.LOAN_DURATION IS MISSING ) );
+
+QUIT;
+
+/*********** Prediction model using logistic regression ***********/
+/*********** Model training ***********/
+
+PROC LOGISTIC DATA=LIB65778.TRAINING_DS OUTMODEL=LIB65778.TRAINING_DS_MODEL;
+CLASS
+GENDER
+FAMILY_MEMBERS
+LOAN_LOCATION
+LOAN_HISTORY
+MARITAL_STATUS
+QUALIFICATION
+EMPLOYMENT;
+/* Above lists the categorical variables */
+/* LOAN_APPROVAL_STATUS is the dependent variable */
+MODEL LOAN_APPROVAL_STATUS = 
+/* Following are the independent variables */
+GENDER
+FAMILY_MEMBERS
+LOAN_LOCATION
+LOAN_HISTORY
+MARITAL_STATUS
+QUALIFICATION
+EMPLOYMENT
+LOAN_AMOUNT
+LOAN_DURATION;
+OUTPUT OUT = LIB65778.TRAINING_OUT_DS P = PRED_PROB;
+/* PRED_PROB is a variable holding the predicted probability */
+/* OUT is the dataset holding the predicted probability */
+/* Akaike Information criterion must (AIC) < SC (Schwarz Criterion) */
+RUN;
+
+/* If (Pr > ChiSq) is <= 0.05, this indicates the independent variable is a significant 
+variable and is significantly contributing to the prediction of the dependent variable */
+
+/*********** Model predicting LIB65778.TESTING_DS ***********/
+
+PROC LOGISTIC INMODEL=LIB65778.TRAINING_DS_MODEL;
+
+SCORE DATA=LIB65778.TESTING_DS
+OUT=LIB65778.TESTING_DS_LAS_PREDICTED; /* Location of output */
+
+QUIT;
+
+TITLE1 'Loan Approval Status';
+TITLE2 'Lasiandra Finance Inc.';
+FOOTNOTE '-----END-----';
+
+PROC SQL;
+
+SELECT *
+FROM LIB65778.TESTING_DS_LAS_PREDICTED;
+
+QUIT;
+
+/* To find the physical location of the LIB65778 on SAS cloud */
+
+PROC datasets library=LIB65778 memtype=DATA;
+RUN;
+
+/*********** ODS - Output Delivery System ***********/
+ODS HTML CLOSE;
+ODS PDF CLOSE;
+
+/* Determine the physical location of pdf */
+ODS PDF FILE="/home/u60782518/DAP_FT_MAY_2022_TP065778/Report.pdf";
+OPTIONS NOBYLINE NODATE;
+TITLE1 "Bank Loan Approval Status Predicted";
+TITLE2 "Lasiandra Finance Inc.";
+
+PROC REPORT DATA=LIB65778.TESTING_DS_LAS_PREDICTED NOWINDOWS;
+
+BY SME_LOAN_ID_NO; /* To separate each by SME_LOAN_ID_NO */
+DEFINE SME_LOAN_ID_NO / GROUP 'Loan Application ID';
+DEFINE I_LOAN_APPROVAL_STATUS / GROUP 'Loan Approval Status';
+FOOTNOTE '-----End of Report-----';
+
+RUN;
+OPTIONS BYLINE;
