@@ -19,12 +19,13 @@ Date updated: 22-March-2022
 - **Result:** The program significantly accelerated the loan approval process, improving efficiency and productivity.
 - **Skills:** SQL, SAS Studio, Statistics, Data Ingestion, Data Preprocessing, Data Visualization, Data Analysis, Machine Learning
 
+
 **3. ML - Machine Learning**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
+- **Title:** E-Commerce Package Delivery Time Prediction Using Machine Learning
+- **Description:** This study aims to develop prediction models using machine learning algorithms to predict the last-mile delivery time of shipping products as a classification problem of whether they are delivered on time or not. The objectives are to identify suitable algorithms, develop prediction models with hyperparameter optimization, and evaluate their performance against related works.
+- **Approach:** The dataset used in this study is an e-commerce shipment dataset with 10999 observations and 12 variables. Four machine learning algorithms, including logistic regression, XGBoost, random forest, and AdaBoost, are used for prediction models. Evaluation metrics, such as confusion matrix, accuracy, specificity, sensitivity, ROC, and Cohen's kappa, are used to measure the performance of the models. The exploratory data analysis and data pre-processing steps were performed, including identifying missing values, dropping and recoding features, factoring categorical variables, feature encoding, feature scaling, and train-test data splitting for model fitting and validation.
+- **Result:** Multiple machine learning models were developed and compared to predict package delivery time, with optimized AdaBoost identified as the best performing model. The models outperformed those from previous literature.
+- **Skills:** R, Machine Learning, Data Preprocessing, Data Visualization, Data Analysis, Statistics, Hyperparameter Tuning, Model Evaluation.
 
 
 **4. DL - Deep Learning**
