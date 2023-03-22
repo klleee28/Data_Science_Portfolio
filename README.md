@@ -3,21 +3,21 @@
 Date updated: 22-March-2022
 
 #### Predictive Modeling
-1. Advanced Business Analytics and Visualization
-2. Data Analytical Programming
-3. Machine Learning
-4. Deep Learning
-5. Capstone
+1. ABAV - Advanced Business Analytics and Visualization
+2. DAP - Data Analytical Programming
+3. ML - Machine Learning
+4. DL - Deep Learning
+5. CP - Capstone
 
 #### Big Data & Cloud Computing
-1. Big Data Analytics and Technologies
-2. Big Data Analytics and Technologies
-3. Cloud Infrastructures and Computing
+1. BDAT - Big Data Analytics and Technologies
+2. BDAT - Big Data Analytics and Technologies
+3. CIS - Cloud Infrastructures and Computing
 
 #### Business Intelligence and Data Management
-1. DM 1
-2. DM 2
-3. BIS
+1. DM - Data Management
+2. DM - Data Management
+3. BIS - Business Intelligence Systems
 
 #### Natural Language Processing
 1. NLP
