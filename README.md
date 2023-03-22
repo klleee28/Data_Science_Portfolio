@@ -5,7 +5,8 @@ Program Title: MSc in Data Science and Business Analytics \
 University: Asia Pacific University of Technology and Innovation \
 Award: Distinction \
 CGPA: 3.84 \
-Program Duration: December 2021 to December 2022 
+Program Duration: December 2021 to December 2022 \
+Email: KeanLim.lee28@gmail.com
 
 This repository archived the courseworks completed during my Master's Degree. The following provides a description of the coursework completed and skill set utilized. \
 Date updated: 22-March-2022
@@ -53,30 +54,26 @@ Date updated: 22-March-2022
 
 ## 2.0 Big Data & Cloud Computing
 **2.1 BDAT - Big Data Analytics and Technologies**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
+- **Title:** Big Data Tools Proposal in Tourism
+- **Description:** This study discusses the potential of using Big Data in the tourism sector to support decision making and increase profits. It outlines the challenges faced in implementing Big Data solutions and proposes a Big Data ecosystem to predict hotel and flight search trends in a faster and cheaper manner. The aim is to derive strategic value from Big Data in the tourism sector.
+- **Approach:** Proposed a Big Data ecosystem for the company using various tools such as Hadoop Distributed File System, MongoDB, Spark, and more. Security measures such as implementing a security layer, data authorization, and accessibility are suggested to ensure the security and confidentiality of customer data.
+- **Skills:** Understanding of Big Data Technologies, implementation and limitations.
+
+**2.2 CIS - Cloud Infrastructures and Computing**
+- **Title:** Review of Cloud Computing Impact on Sustainable Development
+- **Description:** This study discusses the impact of cloud computing on the environment and the need for sustainability in the digital transformation era. The aim is to assess the green initiatives of cloud service providers and promote sustainable development. The objective is to reduce the negative impact of cloud computing on the environment and achieve a healthy, fair, and sustainable future.
+- **Result:** The resource pooling, rapid elasticity, and broad network access features of cloud computing contribute to sustainable development by reducing the reliance on physical infrastructures, providing cost-effective measures to handle temporary excess workload, and reducing emissions from transportation. Cloud service providers such as Amazon, Microsoft, and Google have implemented various strategies to achieve environmental sustainability, including the adoption of renewable energy, improving power and water usage efficiency, and using innovative server cooling methods.
+- **Skills:** Cloud computing
+
+**2.3 CIS - Cloud Infrastructures and Computing**
+- **Title:** Case Study: GoGreen Insurance Company Cloud Adoption
+- **Description:** This case study outlines the cloud adoption plan for GoGreen Insurance Company. The aim is to improve the company's flexibility, performance, and security while also reducing costs. The objectives include implementing a scalable and reliable architecture, securing the network and data, and utilizing cost-effective services. The study covers details on network architecture, security, encryption, instance details, recovery point objectives, document storage, web, application, and database tiers, additional services, proposed architecture diagram, and cost considerations.
+- **Approach:** The approach taken is to implement a cloud-based architecture using Amazon Web Services (AWS) to improve the company's flexibility, performance, and security while also reducing costs. The plan includes utilizing AWS services such as Auto Scaling, CloudWatch, and Route 53 to monitor and optimize resources and implementing security measures such as security groups and encryption to protect data.
+- **Skills:** AWS, VPN, EC2, S3
 
 
-**2. BDAT - Big Data Analytics and Technologies**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
-
-
-**3. CIS - Cloud Infrastructures and Computing**
-- **Title:**  
-- **Description:** 
-- **Approach:**
-- **Result:** 
-- **Skills:**
-
-#### Business Intelligence and Data Management
-**1. DM - Data Management**
+## 3.0 Business Intelligence and Data Management
+**3.1 DM - Data Management**
 - **Title:**  
 - **Description:** 
 - **Approach:**
