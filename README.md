@@ -5,7 +5,7 @@ Date updated: 22-March-2022
 
 #### Predictive Modeling
 1. ABAV - Advanced Business Analytics and Visualization
-    AD
+- Title: asd
 3. DAP - Data Analytical Programming
 4. ML - Machine Learning
 5. DL - Deep Learning
