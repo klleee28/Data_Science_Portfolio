@@ -5,10 +5,11 @@ Date updated: 22-March-2022
 
 #### Predictive Modeling
 1. ABAV - Advanced Business Analytics and Visualization
-2. DAP - Data Analytical Programming
-3. ML - Machine Learning
-4. DL - Deep Learning
-5. CP - Capstone
+    AD
+3. DAP - Data Analytical Programming
+4. ML - Machine Learning
+5. DL - Deep Learning
+6. CP - Capstone
 
 #### Big Data & Cloud Computing
 1. BDAT - Big Data Analytics and Technologies
