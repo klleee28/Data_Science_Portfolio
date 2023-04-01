@@ -5,7 +5,7 @@ Program Title: MSc in Data Science and Business Analytics \
 University: Asia Pacific University of Technology and Innovation \
 Award: Distinction \
 CGPA: 3.84 \
-Program Duration: December 2021 to December 2022 \
+Program Duration: December 2021 to March 2023 \
 Email: KeanLim.lee28@gmail.com
 
 This repository archived the courseworks completed during my Master's Degree. The following provides a description of the coursework completed and skill set utilized. 
